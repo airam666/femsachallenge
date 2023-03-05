@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {Card, IconButton, MD3Colors} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
-import {fullDateParsed} from '../utils/formats';
+import {fullDateParsed, addCommas} from '../utils/formats';
 
 const Product = ({data}) => {
   const [parsedDate, setParsedDate] = useState('');
@@ -42,7 +42,7 @@ const Product = ({data}) => {
                 </Text>
               )}
               <Text variant="bodyMedium" style={styles.points}>
-                {data.points}
+                {addCommas(data.points)}
               </Text>
               <IconButton
                 icon="chevron-right"
